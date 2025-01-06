@@ -10,7 +10,7 @@
   },
   "autolinking": {
     "Math": {
-      "cpp": "HybridMaths"
+      "cpp": "HybridMath"
     }
   },
   "ignorePaths": ["node_modules"]

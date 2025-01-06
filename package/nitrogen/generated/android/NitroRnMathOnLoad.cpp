@@ -11,7 +11,7 @@
 #include <fbjni/fbjni.h>
 #include <NitroModules/HybridObjectRegistry.hpp>
 
-
+#include "HybridMath.hpp"
 
 namespace margelo::nitro::rnmath {
 
@@ -25,7 +25,15 @@ int initialize(JavaVM* vm) {
     
 
     // Register Nitro Hybrid Objects
-    
+    HybridObjectRegistry::registerHybridObjectConstructor(
+      "Math",
+      []() -> std::shared_ptr<HybridObject> {
+        static_assert(std::is_default_constructible_v<HybridMath>,
+                      "The HybridObject \"HybridMath\" is not default-constructible! "
+                      "Create a public constructor that takes zero arguments to be able to autolink this HybridObject.");
+        return std::make_shared<HybridMath>();
+      }
+    );
   });
 }
 
