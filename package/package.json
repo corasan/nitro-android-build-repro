@@ -34,10 +34,7 @@
     "build": "rm -rf lib && bun typecheck && bob build",
     "release": "release-it"
   },
-  "keywords": [
-    "react-native",
-    "nitro"
-  ],
+  "keywords": ["react-native", "nitro"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mrousavy/nitro.git"
@@ -62,7 +59,6 @@
     "prettier": "^3.3.3",
     "react": "^18.3.1",
     "react-native": "^0.75.2",
-    "react-native-nitro-modules": "*",
     "typescript": "^5.5.4"
   },
   "peerDependencies": {
@@ -72,13 +68,8 @@
   },
   "eslintConfig": {
     "root": true,
-    "extends": [
-      "@react-native",
-      "prettier"
-    ],
-    "plugins": [
-      "prettier"
-    ],
+    "extends": ["@react-native", "prettier"],
+    "plugins": ["prettier"],
     "rules": {
       "prettier/prettier": [
         "warn",
@@ -92,10 +83,7 @@
       ]
     }
   },
-  "eslintIgnore": [
-    "node_modules/",
-    "lib/"
-  ],
+  "eslintIgnore": ["node_modules/", "lib/"],
   "prettier": {
     "quoteProps": "consistent",
     "singleQuote": true,
